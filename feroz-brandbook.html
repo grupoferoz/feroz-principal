@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feroz Group — Brand Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* ── Colores reales de la llama (del logo oficial) ── */
+    --feroz-yellow:  #FFD700;   /* pétalo izquierdo / base amarilla */
+    --feroz-amber:   #FF8C00;   /* pétalo central superior */
+    --feroz-orange:  #FF4500;   /* pétalo central inferior / acento */
+    --feroz-magenta: #C71585;   /* pétalo derecho / arranque */
+    --feroz-blue:    #0000CD;   /* pétalo derecho / punta */
+
+    /* ── Colores corporativos ── */
+    --feroz-black:   #0A0A0A;
+    --feroz-white:   #FAFAFA;
+    --feroz-gray:    #6B7280;
+    --feroz-lightgray: #F3F4F6;
+
+    /* ── Acento de acción (rojo vibrante de fondo rojo) ── */
+    --feroz-red:     #E8003D;
+
+    /* Sub-brand colors */
+    --print-primary:    #FF4500;
+    --print-secondary:  #FFD700;
+    --print-accent:     #FF8C00;
+
+    --store-primary:    #C71585;
+    --store-secondary:  #0000CD;
+    --store-accent:     #FF4500;
+
+    --careers-primary:  #1E3A5F;
+    --careers-secondary:#C8972A;
+    --careers-accent:   #0000CD;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--feroz-black);
+    color: var(--feroz-white);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 4px; color: var(--feroz-white); }
+  .nav-logo span { color: var(--feroz-red); }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; transition: color .3s; }
+  .nav-links a:hover { color: var(--feroz-white); }
+
+  /* ─── SECTIONS ─── */
+  section { min-height: 100vh; position: relative; }
+
+  /* ─── COVER ─── */
+  #cover {
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center;
+    background: var(--feroz-black);
+    overflow: hidden;
+  }
+  .cover-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 50% 30%, rgba(232,0,61,0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 80% 80%, rgba(123,47,190,0.12) 0%, transparent 60%);
+  }
+  .cover-tag {
+    font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--feroz-red); margin-bottom: 1.5rem;
+    border: 1px solid rgba(232,0,61,0.4); padding: 0.4rem 1.2rem; border-radius: 100px;
+    animation: fadeUp 1s ease both;
+  }
+  .cover-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(6rem, 15vw, 14rem);
+    line-height: 0.9;
+    letter-spacing: 8px;
+    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.5) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+  .cover-subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 5vw, 4rem);
+    background: linear-gradient(90deg, var(--feroz-purple), var(--feroz-red), var(--feroz-orange));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-top: -0.5rem;
+    animation: fadeUp 1s ease 0.35s both;
+  }
+  .cover-desc {
+    margin-top: 2.5rem; max-width: 480px;
+    font-size: 0.95rem; font-weight: 300; line-height: 1.8;
+    color: rgba(255,255,255,0.5);
+    animation: fadeUp 1s ease 0.5s both;
+  }
+  .cover-meta {
+    margin-top: 4rem;
+    display: flex; gap: 3rem;
+    animation: fadeUp 1s ease 0.65s both;
+  }
+  .cover-meta-item { text-align: center; }
+  .cover-meta-item .label { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+  .cover-meta-item .val { font-family: 'Bebas Neue'; font-size: 1.5rem; letter-spacing: 2px; color: var(--feroz-white); }
+  .flame-decoration {
+    position: absolute; top: -5%; right: -5%;
+    width: 55vw; max-width: 650px;
+    opacity: 0.04;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  /* ─── MANIFESTO ─── */
+  #manifesto {
+    background: var(--feroz-red);
+    display: flex; align-items: center; justify-content: center;
+    padding: 8rem 4rem;
+    min-height: auto;
+  }
+  .manifesto-inner { max-width: 900px; text-align: center; }
+  .manifesto-word {
+    font-family: 'Bebas Neue'; font-size: clamp(5rem, 12vw, 10rem);
+    letter-spacing: 6px; line-height: 1;
+    color: rgba(255,255,255,0.1);
+    display: block;
+  }
+  .manifesto-inner p {
+    font-family: 'DM Serif Display'; font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.6; color: #fff; font-style: italic;
+    margin-top: -2rem; position: relative; z-index: 1;
+  }
+  .manifesto-inner p em { font-style: normal; color: rgba(255,255,255,0.6); }
+
+  /* ─── GENERIC SECTION HEADER ─── */
+  .section-header {
+    padding: 7rem 4rem 4rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .section-label {
+    font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--feroz-red); margin-bottom: 1rem; display: block;
+  }
+  .section-title {
+    font-family: 'Bebas Neue'; font-size: clamp(3.5rem, 7vw, 6rem);
+    letter-spacing: 4px; line-height: 1; color: var(--feroz-white);
+  }
+
+  /* ─── BRAND ESSENCE ─── */
+  #essence { background: #111; }
+  .essence-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 0 4rem 4rem;
+    max-width: 1200px;
+  }
+  .essence-card {
+    background: #111; padding: 3rem;
+    transition: background .3s;
+  }
+  .essence-card:hover { background: #161616; }
+  .essence-number {
+    font-family: 'Bebas Neue'; font-size: 5rem;
+    color: rgba(255,255,255,0.06); line-height: 1; display: block;
+  }
+  .essence-title {
+    font-family: 'Playfair Display'; font-size: 1.5rem; font-weight: 700;
+    color: var(--feroz-white); margin-bottom: 1rem;
+  }
+  .essence-text {
+    font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.5); font-weight: 300;
+  }
+  .essence-accent { display: inline-block; width: 2rem; height: 2px; background: var(--feroz-red); margin-bottom: 1rem; }
+
+  /* ─── LOGOTIPO ─── */
+  #logo { background: #0d0d0d; }
+  .logo-showcase {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: rgba(255,255,255,0.05);
+    margin: 0 4rem; max-width: 1200px;
+  }
+  .logo-version {
+    padding: 3.5rem 3rem; display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    min-height: 280px; gap: 1.5rem;
+  }
+  /* Horizontal logo lockup */
+  .logo-lockup {
+    display: flex; flex-direction: row; align-items: center; gap: 1.2rem;
+  }
+  .logo-lockup-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-lockup-feroz {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px; font-size: 2.8rem;
+    display: block; line-height: 1;
+  }
+  .logo-lockup-print {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem; font-weight: 700;
+    display: block; margin-top: -0.15rem;
+  }
+  .logo-lockup-print.gradient {
+    background: linear-gradient(90deg, #C71585 0%, #FF4500 50%, #FF8C00 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .logo-lockup-print.white { color: rgba(255,255,255,0.9); }
+
+  .logo-version.white-bg { background: #FAFAFA; }
+  .logo-version.black-bg { background: #0A0A0A; }
+  .logo-version.red-bg   { background: var(--feroz-red); }
+  .logo-label {
+    font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255,255,255,0.25); text-align: center;
+  }
+  .logo-label.dark { color: rgba(0,0,0,0.3); }
+
+  /* ─── FLAME SVG ─── */
+  .flame-svg { width: 72px; height: auto; }
+
+  /* ─── PALETA ─── */
+  #colors { background: #0a0a0a; min-height: auto; padding-bottom: 5rem; }
+  .palette-group { margin: 0 4rem 3rem; max-width: 1200px; }
+  .palette-group-label { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1.5rem; display: block; }
+  .swatches { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .swatch {
+    flex: 1; min-width: 140px; border-radius: 12px; overflow: hidden;
+    transition: transform .3s;
+  }
+  .swatch:hover { transform: translateY(-4px); }
+  .swatch-color { height: 100px; }
+  .swatch-info { padding: 1rem; background: #161616; }
+  .swatch-name { font-weight: 600; font-size: 0.85rem; }
+  .swatch-hex { font-size: 0.75rem; color: rgba(255,255,255,0.35); font-family: monospace; margin-top: 0.2rem; }
+  .swatch-role { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-top: 0.3rem; }
+
+  /* Sub-brand swatches */
+  .subbrand-palettes { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 0 4rem 3rem; max-width: 1200px; }
+  .subbrand-palette { border-radius: 16px; overflow: hidden; }
+  .subbrand-palette-header { padding: 2rem; }
+  .subbrand-palette-name { font-family: 'Bebas Neue'; font-size: 1.8rem; letter-spacing: 3px; }
+  .subbrand-palette-sub { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; margin-top: 0.2rem; }
+  .subbrand-palette-colors { display: flex; }
+  .subbrand-swatch { flex: 1; height: 50px; }
+  .subbrand-palette-body { padding: 1.5rem; background: #161616; }
+  .subbrand-palette-body p { font-size: 0.8rem; line-height: 1.7; color: rgba(255,255,255,0.45); }
+
+  /* ─── TIPOGRAFIA ─── */
+  #typography { background: #111; min-height: auto; padding-bottom: 5rem; }
+  .type-showcase { margin: 0 4rem; max-width: 1200px; }
+  .type-family { padding: 3rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .type-family:last-child { border-bottom: none; }
+  .type-meta { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 0.5rem; }
+  .type-name { font-size: 0.8rem; font-weight: 500; color: var(--feroz-red); margin-bottom: 1.5rem; }
+  .type-sample-hero {
+    font-family: 'Bebas Neue'; font-size: clamp(4rem, 10vw, 9rem);
+    letter-spacing: 5px; line-height: 1; color: var(--feroz-white);
+  }
+  .type-sample-display {
+    font-family: 'Playfair Display'; font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700; line-height: 1.2; color: var(--feroz-white);
+  }
+  .type-sample-script {
+    font-family: 'Dancing Script'; font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    background: linear-gradient(90deg, #C71585, #FF4500, #FF8C00);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .type-sample-body { font-family: 'DM Sans'; font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.5); max-width: 600px; }
+  .type-use { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+  .type-use-tag {
+    font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.12); padding: 0.25rem 0.7rem; border-radius: 100px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ─── SUBBRANDS ─── */
+  #subbrands { background: #0a0a0a; min-height: auto; padding-bottom: 5rem; }
+  .subbrand-cards { display: grid; gap: 1px; background: rgba(255,255,255,0.04); margin: 0 4rem; max-width: 1200px; }
+  .subbrand-card { padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .subbrand-card:nth-child(even) { background: #0d0d0d; }
+  .subbrand-card-visual {
+    border-radius: 20px; padding: 4rem; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 1rem; min-height: 280px;
+  }
+  .subbrand-card-logo { font-family: 'Bebas Neue'; font-size: 2.5rem; letter-spacing: 4px; text-align: center; }
+  .subbrand-card-logo .sub { font-family: 'Dancing Script'; font-size: 2rem; font-weight: 700; display: block; margin-top: -0.5rem; }
+  .subbrand-badge {
+    font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.3); padding: 0.3rem 1rem; border-radius: 100px;
+    color: rgba(255,255,255,0.7);
+  }
+  .subbrand-info {}
+  .subbrand-tag { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subbrand-name { font-family: 'Bebas Neue'; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 3px; line-height: 1; margin-bottom: 1rem; color: var(--feroz-white); }
+  .subbrand-tagline { font-family: 'Playfair Display'; font-style: italic; font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+  .subbrand-desc { font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.4); font-weight: 300; margin-bottom: 2rem; }
+  .subbrand-services { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .service-tag {
+    font-size: 0.7rem; padding: 0.4rem 0.9rem; border-radius: 100px;
+    background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ─── TONO DE VOZ ─── */
+  #voice { background: #111; min-height: auto; padding-bottom: 5rem; }
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.04); margin: 0 4rem; max-width: 1200px; }
+  .voice-card { padding: 3rem; background: #111; }
+  .voice-card:hover { background: #161616; }
+  .voice-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .voice-title { font-family: 'Playfair Display'; font-size: 1.3rem; font-weight: 700; color: var(--feroz-white); margin-bottom: 0.5rem; }
+  .voice-desc { font-size: 0.85rem; line-height: 1.8; color: rgba(255,255,255,0.45); font-weight: 300; }
+  .voice-example { margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-left: 2px solid var(--feroz-red); }
+  .voice-example p { font-size: 0.8rem; font-style: italic; color: rgba(255,255,255,0.35); line-height: 1.6; }
+
+  /* ─── APLICACIONES ─── */
+  #applications { background: #0a0a0a; min-height: auto; padding-bottom: 5rem; }
+  .app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 0 4rem; max-width: 1200px; }
+  .app-card {
+    border-radius: 16px; overflow: hidden;
+    background: #141414;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform .3s, border-color .3s;
+  }
+  .app-card:hover { transform: translateY(-6px); border-color: rgba(232,0,61,0.3); }
+  .app-preview { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem; position: relative; overflow: hidden; }
+  .app-preview-inner { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; z-index: 1; }
+  .app-preview-title { font-family: 'Bebas Neue'; font-size: 1.5rem; letter-spacing: 3px; color: rgba(255,255,255,0.8); }
+  .app-info { padding: 1.5rem; }
+  .app-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem; }
+  .app-desc { font-size: 0.78rem; line-height: 1.7; color: rgba(255,255,255,0.35); }
+
+  /* ─── DO/DON'T ─── */
+  #rules { background: #111; min-height: auto; padding-bottom: 5rem; }
+  .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0 4rem; max-width: 1200px; }
+  .rule-card { border-radius: 16px; padding: 2.5rem; }
+  .rule-do { background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.15); }
+  .rule-dont { background: rgba(232,0,61,0.06); border: 1px solid rgba(232,0,61,0.15); }
+  .rule-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .rule-indicator { width: 8px; height: 8px; border-radius: 50%; }
+  .rule-do .rule-indicator { background: #10B981; }
+  .rule-dont .rule-indicator { background: var(--feroz-red); }
+  .rule-label { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; }
+  .rule-do .rule-label { color: #10B981; }
+  .rule-dont .rule-label { color: var(--feroz-red); }
+  .rule-list { list-style: none; }
+  .rule-list li { font-size: 0.85rem; line-height: 1.8; color: rgba(255,255,255,0.5); padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .rule-list li:last-child { border-bottom: none; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--feroz-black);
+    padding: 4rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer .footer-logo { font-family: 'Bebas Neue'; font-size: 3rem; letter-spacing: 8px; margin-bottom: 0.5rem; }
+  footer .footer-logo span { color: var(--feroz-red); }
+  footer p { font-size: 0.75rem; color: rgba(255,255,255,0.2); letter-spacing: 2px; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(-5deg); }
+  }
+
+  /* ─── UTILS ─── */
+  .center { margin-left: auto; margin-right: auto; }
+  .mt-2 { margin-top: 2rem; }
+  .divider { width: 2rem; height: 2px; background: var(--feroz-red); margin: 1.5rem 0; }
+  .big-number { font-family: 'Bebas Neue'; font-size: 8rem; color: rgba(255,255,255,0.03); position: absolute; top: 1rem; right: 2rem; line-height: 1; pointer-events: none; }
+
+  .gradient-text-print {
+    background: linear-gradient(90deg, #C71585, #FF4500, #FF8C00);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .gradient-text-store {
+    background: linear-gradient(90deg, #C71585, #6B21A8, #0000CD);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .gradient-text-careers {
+    background: linear-gradient(90deg, #1E3A5F, #C8972A);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  /* scroll indicator */
+  .scroll-hint {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    animation: fadeUp 1s ease 1.2s both;
+  }
+  .scroll-hint span { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent); }
+
+  /* responsive basics */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .section-header { padding: 5rem 1.5rem 3rem; }
+    .essence-grid, .logo-showcase, .voice-grid, .rules-grid, .app-grid { grid-template-columns: 1fr; margin: 0 1.5rem; }
+    .subbrand-cards { margin: 0 1.5rem; }
+    .subbrand-card { grid-template-columns: 1fr; gap: 2rem; }
+    .subbrand-palettes { grid-template-columns: 1fr; margin: 0 1.5rem; }
+    .palette-group { margin: 0 1.5rem; }
+    .type-showcase { margin: 0 1.5rem; }
+    footer { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">FEROZ<span>.</span></div>
+  <div class="nav-links">
+    <a href="#essence">Esencia</a>
+    <a href="#logo">Logo</a>
+    <a href="#colors">Colores</a>
+    <a href="#typography">Tipografía</a>
+    <a href="#subbrands">Líneas</a>
+    <a href="#voice">Voz</a>
+    <a href="#rules">Normas</a>
+  </div>
+</nav>
+
+<!-- COVER -->
+<section id="cover">
+  <div class="cover-bg"></div>
+  <!-- Big Flame Background -->
+  <svg class="flame-decoration" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100 10 C130 60 160 90 155 150 C150 200 120 230 100 250 C80 230 50 200 45 150 C40 90 70 60 100 10Z" fill="white"/>
+    <path d="M100 60 C120 95 135 120 132 160 C128 190 114 210 100 225 C86 210 72 190 68 160 C65 120 80 95 100 60Z" fill="white"/>
+  </svg>
+
+  <div class="cover-tag">Brand Identity System · 2025</div>
+  <div class="cover-title">FEROZ</div>
+  <div class="cover-subtitle">Grupo Comercial</div>
+  <p class="cover-desc">Sistema de identidad visual completo para un grupo comercial que opera en tres líneas de negocio bajo una marca madre audaz y reconocible.</p>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="label">Versión</div>
+      <div class="val">1.0</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="label">Año</div>
+      <div class="val">2025</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="label">Líneas</div>
+      <div class="val">3</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Explorar</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto">
+  <div class="manifesto-inner">
+    <span class="manifesto-word">FEROZ</span>
+    <p>Somos <em>intensidad hecha marca.</em> No prometemos — <strong>entregamos.</strong> Cada impresión, cada producto, cada consejo lleva la misma energía: <em>imparable, vibrante, feroz.</em> Somos el grupo que convierte ideas en realidad sin pedir permiso.</p>
+  </div>
+</section>
+
+<!-- BRAND ESSENCE -->
+<section id="essence">
+  <div class="section-header">
+    <span class="section-label">01 — Esencia de Marca</span>
+    <div class="section-title">QUIÉNES<br>SOMOS</div>
+  </div>
+  <div class="essence-grid center">
+    <div class="essence-card">
+      <span class="essence-number">01</span>
+      <div class="essence-accent"></div>
+      <div class="essence-title">Propósito</div>
+      <p class="essence-text">Empoderar a personas y empresas con herramientas visuales, productos de calidad y orientación profesional que impulsen su crecimiento de manera feroz e imparable.</p>
+    </div>
+    <div class="essence-card">
+      <span class="essence-number">02</span>
+      <div class="essence-accent"></div>
+      <div class="essence-title">Visión</div>
+      <p class="essence-text">Ser el grupo comercial de referencia en Colombia, reconocido por transformar la vida de nuestros clientes a través de soluciones de impresión, comercio digital y desarrollo de carrera.</p>
+    </div>
+    <div class="essence-card">
+      <span class="essence-number">03</span>
+      <div class="essence-accent"></div>
+      <div class="essence-title">Misión</div>
+      <p class="essence-text">Ofrecer servicios de impresión a domicilio, comercio online y asesoría profesional con la más alta calidad, velocidad y calidez humana que nos distingue.</p>
+    </div>
+    <div class="essence-card">
+      <span class="essence-number">04</span>
+      <div class="essence-accent"></div>
+      <div class="essence-title">Valores</div>
+      <p class="essence-text"><strong style="color:rgba(255,255,255,0.8)">Intensidad</strong> en todo lo que hacemos. <strong style="color:rgba(255,255,255,0.8)">Autenticidad</strong> sin filtros. <strong style="color:rgba(255,255,255,0.8)">Calidad</strong> como estándar mínimo. <strong style="color:rgba(255,255,255,0.8)">Agilidad</strong> como promesa. <strong style="color:rgba(255,255,255,0.8)">Conexión</strong> humana siempre.</p>
+    </div>
+    <div class="essence-card">
+      <span class="essence-number">05</span>
+      <div class="essence-accent"></div>
+      <div class="essence-title">Personalidad</div>
+      <p class="essence-text">Audaz pero accesible. Profesional pero cercano. Creativo pero confiable. Feroz es esa persona que te habla directo, te da soluciones reales y te da más de lo que esperas.</p>
+    </div>
+    <div class="essence-card">
+      <span class="essence-number">06</span>
+      <div class="essence-accent"></div>
+      <div class="essence-title">Posicionamiento</div>
+      <p class="essence-text">Para emprendedores, profesionales y empresas que necesitan actuar rápido y verse increíble. Feroz es el único grupo que une impresión, comercio y carrera bajo un mismo fuego.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOTIPO -->
+<section id="logo">
+  <div class="section-header">
+    <span class="section-label">02 — Sistema de Logo</span>
+    <div class="section-title">IDENTIDAD<br>VISUAL</div>
+  </div>
+
+  <div class="logo-showcase center">
+
+    <!-- ── BLOQUE SVG REUTILIZABLE (llama 3 pétalos) ── -->
+    <!-- Versión principal fondo blanco -->
+    <div class="logo-version white-bg">
+      <div class="logo-lockup">
+        <svg width="72" height="88" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="flameY" x1="30%" y1="0%" x2="70%" y2="100%">
+              <stop offset="0%"   stop-color="#FFD700"/>
+              <stop offset="60%"  stop-color="#FF8C00"/>
+              <stop offset="100%" stop-color="#FF4500"/>
+            </linearGradient>
+            <linearGradient id="flameO" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%"   stop-color="#FF8C00"/>
+              <stop offset="100%" stop-color="#FF4500"/>
+            </linearGradient>
+            <linearGradient id="flamePB" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"   stop-color="#C71585"/>
+              <stop offset="55%"  stop-color="#6B21A8"/>
+              <stop offset="100%" stop-color="#0000CD"/>
+            </linearGradient>
+          </defs>
+          <!-- Pétalo izquierdo amarillo (más grande, detrás) -->
+          <path d="M95 230 C50 210 18 170 22 110 C26 55 62 15 90 5 C78 50 72 90 82 135 C90 168 98 195 95 230Z" fill="url(#flameY)"/>
+          <!-- Pétalo central naranja (mediano, encima) -->
+          <path d="M118 230 C82 208 62 168 72 108 C80 60 110 25 132 18 C120 60 115 100 122 140 C128 172 140 200 118 230Z" fill="url(#flameO)"/>
+          <!-- Pétalo derecho púrpura-azul (más pequeño, al frente) -->
+          <path d="M140 228 C115 210 102 178 112 132 C120 95 144 68 162 60 C156 92 150 122 154 152 C158 178 165 205 140 228Z" fill="url(#flamePB)"/>
+        </svg>
+        <div class="logo-lockup-text">
+          <span class="logo-lockup-feroz" style="color:#0A0A0A">FEROZ</span>
+          <span class="logo-lockup-print gradient">Print</span>
+        </div>
+      </div>
+      <div class="logo-label dark">Versión principal — fondo claro</div>
+    </div>
+
+    <!-- Versión fondo negro -->
+    <div class="logo-version black-bg">
+      <div class="logo-lockup">
+        <svg width="72" height="88" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="flameY2" x1="30%" y1="0%" x2="70%" y2="100%">
+              <stop offset="0%"   stop-color="#FFD700"/>
+              <stop offset="60%"  stop-color="#FF8C00"/>
+              <stop offset="100%" stop-color="#FF4500"/>
+            </linearGradient>
+            <linearGradient id="flameO2" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%"   stop-color="#FF8C00"/>
+              <stop offset="100%" stop-color="#FF4500"/>
+            </linearGradient>
+            <linearGradient id="flamePB2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"   stop-color="#C71585"/>
+              <stop offset="55%"  stop-color="#6B21A8"/>
+              <stop offset="100%" stop-color="#0000CD"/>
+            </linearGradient>
+          </defs>
+          <path d="M95 230 C50 210 18 170 22 110 C26 55 62 15 90 5 C78 50 72 90 82 135 C90 168 98 195 95 230Z" fill="url(#flameY2)"/>
+          <path d="M118 230 C82 208 62 168 72 108 C80 60 110 25 132 18 C120 60 115 100 122 140 C128 172 140 200 118 230Z" fill="url(#flameO2)"/>
+          <path d="M140 228 C115 210 102 178 112 132 C120 95 144 68 162 60 C156 92 150 122 154 152 C158 178 165 205 140 228Z" fill="url(#flamePB2)"/>
+        </svg>
+        <div class="logo-lockup-text">
+          <span class="logo-lockup-feroz" style="color:#FAFAFA">FEROZ</span>
+          <span class="logo-lockup-print gradient">Print</span>
+        </div>
+      </div>
+      <div class="logo-label">Versión principal — fondo oscuro</div>
+    </div>
+
+    <!-- Versión fondo rojo -->
+    <div class="logo-version red-bg">
+      <div class="logo-lockup">
+        <svg width="72" height="88" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="flameW1" x1="30%" y1="0%" x2="70%" y2="100%">
+              <stop offset="0%"   stop-color="#fff"/>
+              <stop offset="100%" stop-color="#FFD700"/>
+            </linearGradient>
+            <linearGradient id="flameW2" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%"   stop-color="#FFD700"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0.7)"/>
+            </linearGradient>
+            <linearGradient id="flameW3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"   stop-color="rgba(255,255,255,0.9)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0.5)"/>
+            </linearGradient>
+          </defs>
+          <path d="M95 230 C50 210 18 170 22 110 C26 55 62 15 90 5 C78 50 72 90 82 135 C90 168 98 195 95 230Z" fill="url(#flameW1)"/>
+          <path d="M118 230 C82 208 62 168 72 108 C80 60 110 25 132 18 C120 60 115 100 122 140 C128 172 140 200 118 230Z" fill="url(#flameW2)"/>
+          <path d="M140 228 C115 210 102 178 112 132 C120 95 144 68 162 60 C156 92 150 122 154 152 C158 178 165 205 140 228Z" fill="url(#flameW3)"/>
+        </svg>
+        <div class="logo-lockup-text">
+          <span class="logo-lockup-feroz" style="color:#fff">FEROZ</span>
+          <span class="logo-lockup-print white">Print</span>
+        </div>
+      </div>
+      <div class="logo-label">Versión monocromática — fondo de color</div>
+    </div>
+
+    <!-- Solo isotipo -->
+    <div class="logo-version" style="background:#0d0d0d; border:1px solid rgba(255,255,255,0.05)">
+      <svg width="110" height="134" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="flameYi" x1="30%" y1="0%" x2="70%" y2="100%">
+            <stop offset="0%"   stop-color="#FFD700"/>
+            <stop offset="60%"  stop-color="#FF8C00"/>
+            <stop offset="100%" stop-color="#FF4500"/>
+          </linearGradient>
+          <linearGradient id="flameOi" x1="20%" y1="0%" x2="80%" y2="100%">
+            <stop offset="0%"   stop-color="#FF8C00"/>
+            <stop offset="100%" stop-color="#FF4500"/>
+          </linearGradient>
+          <linearGradient id="flamePBi" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"   stop-color="#C71585"/>
+            <stop offset="55%"  stop-color="#6B21A8"/>
+            <stop offset="100%" stop-color="#0000CD"/>
+          </linearGradient>
+        </defs>
+        <path d="M95 230 C50 210 18 170 22 110 C26 55 62 15 90 5 C78 50 72 90 82 135 C90 168 98 195 95 230Z" fill="url(#flameYi)"/>
+        <path d="M118 230 C82 208 62 168 72 108 C80 60 110 25 132 18 C120 60 115 100 122 140 C128 172 140 200 118 230Z" fill="url(#flameOi)"/>
+        <path d="M140 228 C115 210 102 178 112 132 C120 95 144 68 162 60 C156 92 150 122 154 152 C158 178 165 205 140 228Z" fill="url(#flamePBi)"/>
+      </svg>
+      <div class="logo-label">Isotipo — uso como ícono / favicon</div>
+    </div>
+
+  </div>
+
+  <!-- Zona de protección -->
+  <div style="padding: 3rem 4rem; max-width:1200px; margin: 0 auto;">
+    <span class="section-label">Zona de protección</span>
+    <p style="font-size:0.9rem; line-height:1.8; color:rgba(255,255,255,0.4); max-width:600px; margin-top:0.5rem;">El logo debe respirar. Siempre mantener un espacio mínimo equivalente a la altura de la letra "F" de FEROZ alrededor del logo completo. Nunca comprimir, estirar, rotar o cambiar los colores del logo fuera de las versiones aprobadas.</p>
+  </div>
+</section>
+
+<!-- COLORES -->
+<section id="colors">
+  <div class="section-header">
+    <span class="section-label">03 — Paleta de Colores</span>
+    <div class="section-title">COLOR<br>SYSTEM</div>
+  </div>
+
+  <!-- Colores principales -->
+  <div class="palette-group center">
+    <span class="palette-group-label">Colores Corporativos — Feroz Grupo</span>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E8003D"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Feroz Rojo</div>
+          <div class="swatch-hex">#E8003D</div>
+          <div class="swatch-role">Primario — Energía</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0A0A0A"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Feroz Negro</div>
+          <div class="swatch-hex">#0A0A0A</div>
+          <div class="swatch-role">Base — Autoridad</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FAFAFA"></div>
+        <div class="swatch-info" style="background:#1a1a1a">
+          <div class="swatch-name">Feroz Blanco</div>
+          <div class="swatch-hex">#FAFAFA</div>
+          <div class="swatch-role">Neutro — Claridad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gradiente de la llama -->
+  <div class="palette-group center">
+    <span class="palette-group-label">Gradiente de la Llama — Paleta Oficial del Ícono</span>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FFD700"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Amarillo Solar</div>
+          <div class="swatch-hex">#FFD700</div>
+          <div class="swatch-role">Pétalo izquierdo / Base</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FF8C00"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Naranja Fuego</div>
+          <div class="swatch-hex">#FF8C00</div>
+          <div class="swatch-role">Pétalo central superior</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FF4500"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Rojo Brasa</div>
+          <div class="swatch-hex">#FF4500</div>
+          <div class="swatch-role">Pétalo central inferior</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C71585"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Magenta Intenso</div>
+          <div class="swatch-hex">#C71585</div>
+          <div class="swatch-role">Pétalo derecho / arranque</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0000CD"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Azul Profundo</div>
+          <div class="swatch-hex">#0000CD</div>
+          <div class="swatch-role">Pétalo derecho / punta</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paletas de sub-marcas -->
+  <div style="padding: 0 4rem; max-width:1200px; margin: 0 auto 1.5rem;">
+    <span class="palette-group-label">Paletas de Líneas de Negocio</span>
+  </div>
+  <div class="subbrand-palettes center">
+    <div class="subbrand-palette">
+      <div class="subbrand-palette-header" style="background:linear-gradient(135deg, #FF4500, #FF8C00, #FFD700)">
+        <div class="subbrand-palette-name">FEROZ PRINT</div>
+        <div class="subbrand-palette-sub">Impresiones a Domicilio</div>
+      </div>
+      <div class="subbrand-palette-colors">
+        <div class="subbrand-swatch" style="background:#FFD700"></div>
+        <div class="subbrand-swatch" style="background:#FF8C00"></div>
+        <div class="subbrand-swatch" style="background:#FF4500"></div>
+        <div class="subbrand-swatch" style="background:#0A0A0A"></div>
+      </div>
+      <div class="subbrand-palette-body">
+        <p>Paleta cálida e intensa: amarillo-naranja-rojo tomados directamente del pétalo izquierdo y central de la llama. Evoca la tinta en movimiento y la entrega urgente.</p>
+      </div>
+    </div>
+    <div class="subbrand-palette">
+      <div class="subbrand-palette-header" style="background:linear-gradient(135deg, #C71585, #6B21A8, #0000CD)">
+        <div class="subbrand-palette-name">FEROZ STORE</div>
+        <div class="subbrand-palette-sub">Tienda Online</div>
+      </div>
+      <div class="subbrand-palette-colors">
+        <div class="subbrand-swatch" style="background:#C71585"></div>
+        <div class="subbrand-swatch" style="background:#6B21A8"></div>
+        <div class="subbrand-swatch" style="background:#0000CD"></div>
+        <div class="subbrand-swatch" style="background:#0A0A0A"></div>
+      </div>
+      <div class="subbrand-palette-body">
+        <p>Paleta digital y magnética: magenta-violeta-azul del pétalo derecho. Proyecta tecnología, confianza y la experiencia de compra online moderna.</p>
+      </div>
+    </div>
+    <div class="subbrand-palette">
+      <div class="subbrand-palette-header" style="background:linear-gradient(135deg, #1E3A5F, #C8972A)">
+        <div class="subbrand-palette-name">FEROZ EMPLEO</div>
+        <div class="subbrand-palette-sub">Asesoría Profesional</div>
+      </div>
+      <div class="subbrand-palette-colors">
+        <div class="subbrand-swatch" style="background:#1E3A5F"></div>
+        <div class="subbrand-swatch" style="background:#0000CD"></div>
+        <div class="subbrand-swatch" style="background:#C8972A"></div>
+        <div class="subbrand-swatch" style="background:#F5F5F5"></div>
+      </div>
+      <div class="subbrand-palette-body">
+        <p>Paleta profesional y aspiracional. Azul marino y dorado proyectan seriedad, ambición y éxito laboral fuera de la paleta de la llama.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFÍA -->
+<section id="typography">
+  <div class="section-header">
+    <span class="section-label">04 — Sistema Tipográfico</span>
+    <div class="section-title">TIPOGRA<br>FÍA</div>
+  </div>
+  <div class="type-showcase center">
+    <div class="type-family">
+      <div class="type-meta">Fuente 01 — Display / Hero</div>
+      <div class="type-name">Bebas Neue</div>
+      <div class="type-sample-hero">ABCDEFG</div>
+      <div class="type-use">
+        <span class="type-use-tag">Nombre de marca</span>
+        <span class="type-use-tag">Titulares grandes</span>
+        <span class="type-use-tag">Números destacados</span>
+        <span class="type-use-tag">Campañas</span>
+      </div>
+    </div>
+    <div class="type-family">
+      <div class="type-meta">Fuente 02 — Identidad / Script</div>
+      <div class="type-name">Dancing Script Bold</div>
+      <div class="type-sample-script">Print · Store · Empleo</div>
+      <div class="type-use">
+        <span class="type-use-tag">Sub-marcas</span>
+        <span class="type-use-tag">Taglines</span>
+        <span class="type-use-tag">Acentos de personalidad</span>
+      </div>
+    </div>
+    <div class="type-family">
+      <div class="type-meta">Fuente 03 — Secundaria / Editorial</div>
+      <div class="type-name">Playfair Display</div>
+      <div class="type-sample-display">Calidad que se siente.</div>
+      <div class="type-use">
+        <span class="type-use-tag">Subtítulos</span>
+        <span class="type-use-tag">Citas</span>
+        <span class="type-use-tag">Énfasis editorial</span>
+      </div>
+    </div>
+    <div class="type-family">
+      <div class="type-meta">Fuente 04 — Cuerpo / Funcional</div>
+      <div class="type-name">DM Sans</div>
+      <div class="type-sample-body">Feroz es más que un nombre — es una forma de hacer las cosas. Cada proyecto que tomamos, lo ejecutamos con la misma energía y compromiso que nos define. Nuestros clientes no contratan un servicio; se unen a un movimiento.</div>
+      <div class="type-use">
+        <span class="type-use-tag">Párrafos</span>
+        <span class="type-use-tag">UI / Apps</span>
+        <span class="type-use-tag">Etiquetas</span>
+        <span class="type-use-tag">Navegación</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUB-MARCAS -->
+<section id="subbrands">
+  <div class="section-header">
+    <span class="section-label">05 — Líneas de Negocio</span>
+    <div class="section-title">TRES<br>LÍNEAS.<br>UN FUEGO.</div>
+  </div>
+
+  <div class="subbrand-cards center">
+
+    <!-- FEROZ PRINT -->
+    <div class="subbrand-card">
+      <div class="subbrand-card-visual" style="background: linear-gradient(135deg, #1a0800, #2d1000); border: 1px solid rgba(255,107,0,0.2)">
+        <svg style="width:60px" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gPY" x1="30%" y1="0%" x2="70%" y2="100%">
+              <stop offset="0%" stop-color="#FFD700"/>
+              <stop offset="60%" stop-color="#FF8C00"/>
+              <stop offset="100%" stop-color="#FF4500"/>
+            </linearGradient>
+            <linearGradient id="gPO" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#FF8C00"/>
+              <stop offset="100%" stop-color="#FF4500"/>
+            </linearGradient>
+          </defs>
+          <path d="M95 230 C50 210 18 170 22 110 C26 55 62 15 90 5 C78 50 72 90 82 135 C90 168 98 195 95 230Z" fill="url(#gPY)"/>
+          <path d="M118 230 C82 208 62 168 72 108 C80 60 110 25 132 18 C120 60 115 100 122 140 C128 172 140 200 118 230Z" fill="url(#gPO)" opacity="0.85"/>
+        </svg>
+        <div class="subbrand-card-logo" style="color:white">
+          FEROZ
+          <span class="sub gradient-text-print">Print</span>
+        </div>
+        <span class="subbrand-badge">🖨️ Impresiones</span>
+      </div>
+      <div class="subbrand-info">
+        <div class="subbrand-tag" style="color: var(--print-primary)">Línea 01 — Impresión</div>
+        <div class="subbrand-name">FEROZ<br>PRINT</div>
+        <div class="subbrand-tagline">"Tu imagen, en tus manos hoy."</div>
+        <p class="subbrand-desc">Servicio de impresión profesional a domicilio. Llevamos calidad directamente a tu puerta con rapidez y resultados que sorprenden. Desde tarjetas de presentación hasta lonas de gran formato.</p>
+        <div class="subbrand-services">
+          <span class="service-tag">📦 Domicilio express</span>
+          <span class="service-tag">🎨 Diseño incluido</span>
+          <span class="service-tag">🖨️ Gran formato</span>
+          <span class="service-tag">📇 Tarjetas de presentación</span>
+          <span class="service-tag">📋 Pendones & lonas</span>
+          <span class="service-tag">📸 Fotografía</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEROZ STORE -->
+    <div class="subbrand-card">
+      <div class="subbrand-info">
+        <div class="subbrand-tag" style="color: var(--store-primary)">Línea 02 — Comercio Digital</div>
+        <div class="subbrand-name">FEROZ<br>STORE</div>
+        <div class="subbrand-tagline">"Todo lo que necesitas, con un clic."</div>
+        <p class="subbrand-desc">Tienda online curada con los mejores productos para tu negocio, hogar y estilo. Experiencia de compra fluida, segura y con la calidez humana que nos distingue.</p>
+        <div class="subbrand-services">
+          <span class="service-tag">🛒 Catálogo online</span>
+          <span class="service-tag">💳 Pago seguro</span>
+          <span class="service-tag">🚚 Envíos nacionales</span>
+          <span class="service-tag">⭐ Productos premium</span>
+          <span class="service-tag">🎁 Personalización</span>
+          <span class="service-tag">📱 App mobile</span>
+        </div>
+      </div>
+      <div class="subbrand-card-visual" style="background: linear-gradient(135deg, #0d0820, #0f1a35); border: 1px solid rgba(123,47,190,0.25)">
+        <svg style="width:60px" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gS1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C71585"/>
+              <stop offset="55%" stop-color="#6B21A8"/>
+              <stop offset="100%" stop-color="#0000CD"/>
+            </linearGradient>
+            <linearGradient id="gS2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6B21A8"/>
+              <stop offset="100%" stop-color="#0000CD"/>
+            </linearGradient>
+          </defs>
+          <path d="M95 230 C50 210 18 170 22 110 C26 55 62 15 90 5 C78 50 72 90 82 135 C90 168 98 195 95 230Z" fill="url(#gS1)"/>
+          <path d="M140 228 C115 210 102 178 112 132 C120 95 144 68 162 60 C156 92 150 122 154 152 C158 178 165 205 140 228Z" fill="url(#gS2)" opacity="0.85"/>
+        </svg>
+        <div class="subbrand-card-logo" style="color:white">
+          FEROZ
+          <span class="sub gradient-text-store">Store</span>
+        </div>
+        <span class="subbrand-badge">🛍️ E-commerce</span>
+      </div>
+    </div>
+
+    <!-- FEROZ EMPLEO -->
+    <div class="subbrand-card">
+      <div class="subbrand-card-visual" style="background: linear-gradient(135deg, #081220, #0f1f35); border: 1px solid rgba(200,151,42,0.25)">
+        <svg style="width:60px" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gE1" x1="30%" y1="0%" x2="70%" y2="100%">
+              <stop offset="0%" stop-color="#FFD700"/>
+              <stop offset="50%" stop-color="#C8972A"/>
+              <stop offset="100%" stop-color="#1E3A5F"/>
+            </linearGradient>
+            <linearGradient id="gE2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1E3A5F"/>
+              <stop offset="100%" stop-color="#0000CD"/>
+            </linearGradient>
+          </defs>
+          <path d="M95 230 C50 210 18 170 22 110 C26 55 62 15 90 5 C78 50 72 90 82 135 C90 168 98 195 95 230Z" fill="url(#gE1)"/>
+          <path d="M140 228 C115 210 102 178 112 132 C120 95 144 68 162 60 C156 92 150 122 154 152 C158 178 165 205 140 228Z" fill="url(#gE2)" opacity="0.9"/>
+        </svg>
+        <div class="subbrand-card-logo" style="color:white">
+          FEROZ
+          <span class="sub gradient-text-careers">Empleo</span>
+        </div>
+        <span class="subbrand-badge">💼 Asesoría</span>
+      </div>
+      <div class="subbrand-info">
+        <div class="subbrand-tag" style="color: var(--careers-secondary)">Línea 03 — Desarrollo Profesional</div>
+        <div class="subbrand-name">FEROZ<br>EMPLEO</div>
+        <div class="subbrand-tagline">"Tu carrera, rediseñada con propósito."</div>
+        <p class="subbrand-desc">Asesorías profesionales para la búsqueda efectiva de empleo. Optimización de hoja de vida, preparación de entrevistas, perfil de LinkedIn y estrategia de carrera personalizada.</p>
+        <div class="subbrand-services">
+          <span class="service-tag">📄 Hoja de vida premium</span>
+          <span class="service-tag">🎯 Estrategia de búsqueda</span>
+          <span class="service-tag">💼 Prep. de entrevistas</span>
+          <span class="service-tag">🔗 LinkedIn optimization</span>
+          <span class="service-tag">🧭 Orientación de carrera</span>
+          <span class="service-tag">📊 Marca personal</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TONO DE VOZ -->
+<section id="voice">
+  <div class="section-header">
+    <span class="section-label">06 — Tono de Voz</span>
+    <div class="section-title">CÓMO<br>HABLAMOS</div>
+  </div>
+  <div class="voice-grid center">
+    <div class="voice-card">
+      <span class="voice-icon">🔥</span>
+      <div class="voice-title">Directo y confiado</div>
+      <p class="voice-desc">No damos rodeos. Decimos lo que hacemos y lo cumplimos. Nuestro lenguaje es claro, sin relleno y sin tecnicismos innecesarios.</p>
+      <div class="voice-example">
+        <p>✅ "Tu pedido sale hoy. Sin excusas."<br>❌ "Procederemos a gestionar el despacho de su solicitud a la brevedad posible."</p>
+      </div>
+    </div>
+    <div class="voice-card">
+      <span class="voice-icon">🤝</span>
+      <div class="voice-title">Cercano y humano</div>
+      <p class="voice-desc">Hablamos de tú a tú. Somos profesionales, pero nunca fríos. Conocemos a nuestros clientes y les hablamos como amigos que saben de lo que hablan.</p>
+      <div class="voice-example">
+        <p>✅ "¿Listo para brillar? Nosotros te imprimimos el camino."<br>❌ "Estimado cliente, nos complace informarle..."</p>
+      </div>
+    </div>
+    <div class="voice-card">
+      <span class="voice-icon">⚡</span>
+      <div class="voice-title">Enérgico y motivador</div>
+      <p class="voice-desc">Feroz inspira acción. Nuestras palabras tienen ímpetu. Usamos verbos fuertes, frases cortas y calls-to-action que invitan a moverse.</p>
+      <div class="voice-example">
+        <p>✅ "Consigue el trabajo que mereces. Hoy."<br>❌ "Considere explorar las posibilidades de su mercado laboral."</p>
+      </div>
+    </div>
+    <div class="voice-card">
+      <span class="voice-icon">🎯</span>
+      <div class="voice-title">Experto sin pedantería</div>
+      <p class="voice-desc">Sabemos mucho, pero no lo usamos para intimidar. Compartimos conocimiento de forma que empodere al cliente, nunca que lo haga sentir pequeño.</p>
+      <div class="voice-example">
+        <p>✅ "Un buen perfil de LinkedIn puede triplicar tus contactos. Te enseñamos cómo."<br>❌ "Es imperativo optimizar su presencia digital para maximizar el alcance orgánico."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APLICACIONES -->
+<section id="applications">
+  <div class="section-header">
+    <span class="section-label">07 — Aplicaciones de Marca</span>
+    <div class="section-title">LA MARCA<br>EN ACCIÓN</div>
+  </div>
+  <div class="app-grid center">
+    <div class="app-card">
+      <div class="app-preview" style="background: linear-gradient(135deg,#1a0800,#2d1000)">
+        <div class="app-preview-inner">
+          <span>📦</span>
+          <div class="app-preview-title" style="color:#FF6B00">PRINT</div>
+        </div>
+      </div>
+      <div class="app-info">
+        <div class="app-name">Empaque y Embalaje</div>
+        <p class="app-desc">Cajas, sobres y bolsas con el logo Feroz Print en naranja vibrante sobre negro. El empaque es parte de la experiencia.</p>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-preview" style="background: linear-gradient(135deg,#E8003D,#FF6B00)">
+        <div class="app-preview-inner">
+          <span style="font-size:2rem">📱</span>
+          <div class="app-preview-title">RRSS</div>
+        </div>
+      </div>
+      <div class="app-info">
+        <div class="app-name">Redes Sociales</div>
+        <p class="app-desc">Posts con fondo rojo corporativo, tipografía Bebas Neue y la llama como elemento gráfico protagonista.</p>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-preview" style="background: linear-gradient(135deg,#0d0820,#1a1040)">
+        <div class="app-preview-inner">
+          <span>🛒</span>
+          <div class="app-preview-title" style="color:#7B2FBE">STORE</div>
+        </div>
+      </div>
+      <div class="app-info">
+        <div class="app-name">E-commerce Web</div>
+        <p class="app-desc">Plataforma con paleta púrpura-azul, fondo oscuro y acentos del gradiente de la llama en botones y banners.</p>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-preview" style="background: linear-gradient(135deg,#081220,#1E3A5F)">
+        <div class="app-preview-inner">
+          <span>💼</span>
+          <div class="app-preview-title" style="color:#C8972A">EMPLEO</div>
+        </div>
+      </div>
+      <div class="app-info">
+        <div class="app-name">Material de Asesoría</div>
+        <p class="app-desc">Documentos, plantillas de CV y presentaciones en azul marino y dorado. Elegancia profesional con el toque Feroz.</p>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-preview" style="background: #111; border: 1px solid rgba(255,255,255,0.06)">
+        <div class="app-preview-inner">
+          <span>🪧</span>
+          <div class="app-preview-title">SEÑALÉTICA</div>
+        </div>
+      </div>
+      <div class="app-info">
+        <div class="app-name">Punto de Venta</div>
+        <p class="app-desc">Pendones, avisos y señalética con el rojo corporativo y la llama en grande. Presencia dominante en espacio físico.</p>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-preview" style="background: linear-gradient(135deg,#1a0005,#2d0010)">
+        <div class="app-preview-inner">
+          <span>📇</span>
+          <div class="app-preview-title">PAPELERÍA</div>
+        </div>
+      </div>
+      <div class="app-info">
+        <div class="app-name">Papelería Corporativa</div>
+        <p class="app-desc">Tarjetas de presentación en acabado premium, letterhead y sobres con el sistema visual coherente del grupo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DO / DON'T -->
+<section id="rules">
+  <div class="section-header">
+    <span class="section-label">08 — Reglas de Uso</span>
+    <div class="section-title">LO QUE SE<br>HACE Y LO<br>QUE NO.</div>
+  </div>
+  <div class="rules-grid center">
+    <div class="rule-card rule-do">
+      <div class="rule-header">
+        <div class="rule-indicator"></div>
+        <div class="rule-label">Siempre hacer</div>
+      </div>
+      <ul class="rule-list">
+        <li>✓ Usar el logo en sus versiones aprobadas solamente</li>
+        <li>✓ Mantener la zona de protección alrededor del logo</li>
+        <li>✓ Usar Bebas Neue para titulares corporativos</li>
+        <li>✓ Diferenciar claramente cada sub-marca con su paleta</li>
+        <li>✓ Mantener el gradiente de la llama fiel a los valores de color</li>
+        <li>✓ Hablar siempre en segunda persona (tú/usted)</li>
+        <li>✓ Priorizar el rojo corporativo como color de acción</li>
+        <li>✓ Usar la llama como elemento gráfico de apoyo</li>
+      </ul>
+    </div>
+    <div class="rule-card rule-dont">
+      <div class="rule-header">
+        <div class="rule-indicator"></div>
+        <div class="rule-label">Nunca hacer</div>
+      </div>
+      <ul class="rule-list">
+        <li>✕ Estirar, rotar o distorsionar el logotipo</li>
+        <li>✕ Cambiar los colores del gradiente de la llama</li>
+        <li>✕ Usar fuentes diferentes al sistema tipográfico</li>
+        <li>✕ Mezclar las paletas de las sub-marcas entre sí</li>
+        <li>✕ Colocar el logo sobre fondos que reduzcan su legibilidad</li>
+        <li>✕ Usar lenguaje formal o corporativo frío</li>
+        <li>✕ Usar el ícono de la llama sin mantener su gradiente</li>
+        <li>✕ Crear sub-marcas adicionales sin validar el sistema</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">FEROZ<span>.</span></div>
+  <p>Brand Book v1.0 — Grupo Comercial Feroz · 2025</p>
+  <p style="margin-top:0.5rem; font-size:0.65rem; color:rgba(255,255,255,0.12)">Documento interno de uso exclusivo. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
