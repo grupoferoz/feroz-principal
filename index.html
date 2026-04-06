@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Feroz | Ecosistema de Crecimiento Profesional y Empresarial</title>
+<meta name="description" content="Cuatro verticales interconectadas para que tu carrera y tu negocio lleguen al siguiente nivel. Talent, Marketing, Impresiones y Store. Medellín, Colombia.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --feroz-light-bg:  #F8F9FA;
+    --feroz-card-bg:   #FFFFFF;
+    --feroz-dark:      #1A1A1A;
+    --feroz-lightgray: #6B7280;
+    --feroz-purple:    #4B0082;
+    --feroz-blue:      #0000CD;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--feroz-light-bg);
+    color: var(--feroz-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+
+  /* ─── NAVBAR ─────────────────────────────────────── */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248, 249, 250, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .navbar-logo {
+    height: 55px;
+    width: auto;
+  }
+
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .navbar-links a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--feroz-lightgray);
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  .navbar-links a:hover { color: var(--feroz-purple); }
+
+  .navbar-cta {
+    display: inline-block;
+    background: var(--feroz-purple);
+    color: white !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .navbar-cta:hover { background: #35005e !important; transform: translateY(-1px); }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--feroz-dark);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--feroz-card-bg);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 1.5rem 2rem;
+    z-index: 99;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--feroz-dark);
+    text-decoration: none;
+  }
+
+  /* ─── HERO ───────────────────────────────────────── */
+  .hero {
+    text-align: center;
+    padding: 5rem 1.5rem 4rem;
+    background: radial-gradient(circle at top, rgba(75, 0, 130, 0.06) 0%, transparent 65%);
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--feroz-purple);
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(75,0,130,0.25);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.08;
+    max-width: 760px;
+    margin: 0 auto 1.5rem;
+    color: var(--feroz-dark);
+  }
+
+  .hero h1 span { color: var(--feroz-purple); }
+
+  .hero-sub {
+    color: var(--feroz-lightgray);
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .stat { text-align: center; }
+
+  .stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--feroz-purple);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--feroz-lightgray);
+    font-weight: 500;
+  }
+
+  /* ─── BOTONES ────────────────────────────────────── */
+  .btn {
+    display: inline-block;
+    background: var(--feroz-purple);
+    color: white;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: transform 0.2s, background 0.3s;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn:hover { background: #35005e; transform: translateY(-2px); }
+
+  .btn-blue { background: var(--feroz-blue); }
+  .btn-blue:hover { background: #0000a3; }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--feroz-dark);
+    border: 2px solid rgba(0,0,0,0.15);
+  }
+
+  .btn-outline:hover {
+    background: var(--feroz-dark);
+    color: white;
+    border-color: var(--feroz-dark);
+  }
+
+  .btn-block { display: block; width: 100%; text-align: center; margin-top: auto; }
+
+  /* ─── SECCIONES ──────────────────────────────────── */
+  .section {
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin-bottom: 1rem;
+    color: var(--feroz-dark);
+    letter-spacing: -0.5px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--feroz-lightgray);
+    max-width: 580px;
+    margin: 0 auto 3rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* ─── FLYWHEEL ───────────────────────────────────── */
+  .flywheel-section {
+    background: var(--feroz-card-bg);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 4rem 1.5rem;
+  }
+
+  .flywheel-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .flywheel-text h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    letter-spacing: -0.5px;
+    margin-bottom: 1.2rem;
+    line-height: 1.15;
+  }
+
+  .flywheel-text h2 span { color: var(--feroz-purple); }
+
+  .flywheel-text p {
+    color: var(--feroz-lightgray);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .flywheel-connections {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .connection-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    color: var(--feroz-lightgray);
+    line-height: 1.5;
+  }
+
+  .connection-item::before {
+    content: "→";
+    color: var(--feroz-blue);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .flywheel-diagram-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ─── VERTICALES ─────────────────────────────────── */
+  .verticals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .vertical-card {
+    background: var(--feroz-card-bg);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .vertical-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+  }
+
+  .vertical-card-accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .accent-blue  { background: var(--feroz-blue); }
+  .accent-purple { background: var(--feroz-purple); }
+  .accent-orange { background: #E87722; }
+  .accent-gray { background: #9CA3AF; }
+
+  .vertical-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .vertical-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--feroz-dark);
+  }
+
+  .vertical-card .vertical-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--feroz-lightgray);
+    margin-bottom: 1rem;
+  }
+
+  .vertical-card p {
+    font-size: 0.9rem;
+    color: var(--feroz-lightgray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .vertical-features {
+    list-style: none;
+    margin-bottom: 1.8rem;
+    flex-grow: 1;
+  }
+
+  .vertical-features li {
+    font-size: 0.85rem;
+    color: var(--feroz-lightgray);
+    margin-bottom: 0.55rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .vertical-features li::before {
+    content: "✓";
+    color: var(--feroz-blue);
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .coming-soon-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.05);
+    color: var(--feroz-lightgray);
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  /* ─── NOSOTROS ───────────────────────────────────── */
+  .nosotros-section {
+    background: var(--feroz-card-bg);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 4rem 1.5rem;
+  }
+
+  .nosotros-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .nosotros-text h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .nosotros-text p {
+    color: var(--feroz-lightgray);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .value-item {
+    background: var(--feroz-light-bg);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .value-item h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    color: var(--feroz-dark);
+  }
+
+  .value-item p {
+    font-size: 0.8rem;
+    color: var(--feroz-lightgray);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .nosotros-visual {
+    background: linear-gradient(135deg, rgba(75,0,130,0.05) 0%, rgba(0,0,205,0.05) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(75,0,130,0.1);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .nosotros-visual .big-quote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 900;
+    color: var(--feroz-dark);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+  }
+
+  .nosotros-visual .big-quote span { color: var(--feroz-purple); }
+
+  .nosotros-visual .origin-note {
+    font-size: 0.85rem;
+    color: var(--feroz-lightgray);
+    font-style: italic;
+  }
+
+  /* ─── ROADMAP / METODOLOGÍA ──────────────────────── */
+  .roadmap-container {
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .roadmap-container::-webkit-scrollbar { display: none; }
+
+  .roadmap {
+    display: flex;
+    gap: 1.5rem;
+    min-width: max-content;
+  }
+
+  @media (min-width: 992px) {
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      min-width: auto;
+    }
+  }
+
+  .step-card {
+    background: var(--feroz-card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--feroz-blue);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    width: 280px;
+    transition: transform 0.2s;
+  }
+
+  .step-card:hover { transform: translateY(-5px); }
+
+  .step-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgba(0,0,0,0.12);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--feroz-dark); }
+  .step-card p { font-size: 0.85rem; color: var(--feroz-lightgray); line-height: 1.5; }
+
+  /* ─── CTA GLOBAL ─────────────────────────────────── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--feroz-light-bg) 0%, #FFFFFF 100%);
+    text-align: center;
+    padding: 5rem 2rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .cta-section h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    color: var(--feroz-lightgray);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .cta-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .calendly-wrapper {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 2.5rem auto 0.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────── */
+  .footer {
+    background: var(--feroz-dark);
+    color: rgba(255,255,255,0.6);
+    padding: 4rem 2rem 2.5rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand img {
+    height: 36px;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+  .footer-brand p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    max-width: 260px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-col a {
+    display: block;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    margin-bottom: 0.7rem;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: rgba(255,255,255,0.9); }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────────── */
+  @media (max-width: 900px) {
+    .flywheel-inner,
+    .nosotros-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .flywheel-diagram-wrap { order: -1; }
+  }
+
+  @media (max-width: 768px) {
+    .navbar-links { display: none; }
+    .hamburger { display: flex; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-brand { grid-column: 1 / -1; }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="navbar">
+  <a href="/">
+    <img
+      src="https://grupoferoz.github.io/feroz-principal/principal500x500sinfondo.png"
+      alt="Grupo Feroz"
+      class="navbar-logo"
+    />
+  </a>
+  <ul class="navbar-links">
+    <li><a href="#verticales">Verticales</a></li>
+    <li><a href="#ecosistema">Ecosistema</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="https://grupoferoz.netlify.app/" target="_blank">Feroz Talent</a></li>
+    <li><a href="https://wa.me/573147084315" target="_blank" class="navbar-cta">Hablar con un asesor</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#verticales" onclick="toggleMenu()">Verticales</a>
+  <a href="#ecosistema" onclick="toggleMenu()">Ecosistema</a>
+  <a href="#nosotros" onclick="toggleMenu()">Nosotros</a>
+  <a href="https://grupoferoz.netlify.app/" target="_blank">Feroz Talent</a>
+  <a href="https://wa.me/573147084315" target="_blank" class="btn" style="text-align:center;">Hablar con un asesor</a>
+</div>
+
+
+<!-- ══════════════ HERO ══════════════ -->
+<header class="hero">
+  <div class="hero-eyebrow">Medellín &mdash; Colombia</div>
+  <h1>Un ecosistema completo para que <span>tu carrera y tu negocio</span> lleguen al siguiente nivel</h1>
+  <p class="hero-sub">
+    Cuatro verticales interconectadas que trabajan juntas: talento, presencia digital, impresión física y comercio. Todo bajo un mismo grupo con un solo propósito: que avances sin rodeos.
+  </p>
+  <div class="hero-btns">
+    <a href="#verticales" class="btn">Explorar el ecosistema</a>
+    <a href="https://wa.me/573147084315" target="_blank" class="btn btn-outline">Hablar con un asesor</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">+200</div>
+      <div class="stat-label">Clientes atendidos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Verticales de negocio</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Hecho en Colombia</div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════ ECOSISTEMA / FLYWHEEL ══════════════ -->
+<section class="flywheel-section" id="ecosistema">
+  <div class="flywheel-inner">
+
+    <div class="flywheel-text">
+      <h2>El <span>ecosistema Feroz</span>: cuatro verticales que se alimentan entre sí</h2>
+      <p>
+        No somos cuatro servicios sueltos. Somos un flywheel diseñado para que el valor se multiplique: cada vertical genera clientes para las demás y ningún usuario queda sin una solución completa.
+      </p>
+      <div class="flywheel-connections">
+        <div class="connection-item"><strong>Talent</strong> Un cliente de que consigue entrevistas necesita copias físicas premium.</div>
+        <div class="connection-item"><strong>Impresiones</strong>Un profesional con perfil optimizado necesita presencia digital potente.</div>
+        <div class="connection-item"><strong>Store</strong>Un emprendedor lanzado necesita su tienda online.</div>
+        <div class="connection-item"><strong>Marketing</strong>Una empresa que contrata servicios de marketing necesita imprimir su material corporativo.</div>
+      </div>
+    </div>
+
+    <div class="flywheel-diagram-wrap">
+      <svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+        <!-- Centro -->
+        <circle cx="170" cy="170" r="56" fill="white" stroke="rgba(75,0,130,0.15)" stroke-width="1.5"/>
+        <text x="170" y="163" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="900" font-size="13" fill="#4B0082">GRUPO</text>
+        <text x="170" y="180" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="900" font-size="13" fill="#4B0082">FEROZ</text>
+
+        <!-- Líneas conectoras -->
+        <line x1="170" y1="114" x2="170" y2="80"  stroke="rgba(75,0,130,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="226" y1="170" x2="260" y2="170" stroke="rgba(75,0,130,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="170" y1="226" x2="170" y2="260" stroke="rgba(75,0,130,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="114" y1="170" x2="80" y2="170"  stroke="rgba(75,0,130,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+        <!-- Talent (arriba) -->
+        <rect x="105" y="10" width="130" height="58" rx="10" fill="white" stroke="#0000CD" stroke-width="1.5"/>
+        <rect x="105" y="10" width="130" height="5" rx="3" fill="#0000CD"/>
+        <text x="170" y="37" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="13" fill="#1A1A1A">Feroz Talent</text>
+        <text x="170" y="55" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#6B7280">Consultoría Laboral</text>
+
+        <!-- Marketing (derecha) -->
+        <rect x="272" y="141" width="58" height="58" rx="10" fill="white" stroke="#4B0082" stroke-width="1.5"/>
+        <rect x="272" y="141" width="58" height="5" rx="3" fill="#4B0082"/>
+        <text x="301" y="166" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="10" fill="#1A1A1A">Feroz</text>
+        <text x="301" y="178" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="10" fill="#1A1A1A">Marketing</text>
+        <text x="301" y="190" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#6B7280">Digital</text>
+
+        <!-- Impresiones (abajo) -->
+        <rect x="105" y="272" width="130" height="58" rx="10" fill="white" stroke="#E87722" stroke-width="1.5"/>
+        <rect x="105" y="272" width="130" height="5" rx="3" fill="#E87722"/>
+        <text x="170" y="299" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="12" fill="#1A1A1A">Feroz Impresiones</text>
+        <text x="170" y="317" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#6B7280">Logística Física</text>
+
+        <!-- Store (izquierda) -->
+        <rect x="10" y="141" width="58" height="58" rx="10" fill="white" stroke="#9CA3AF" stroke-width="1.5"/>
+        <rect x="10" y="141" width="58" height="5" rx="3" fill="#9CA3AF"/>
+        <text x="39" y="166" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="10" fill="#1A1A1A">Feroz</text>
+        <text x="39" y="178" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="10" fill="#1A1A1A">Store</text>
+        <text x="39" y="190" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#9CA3AF">Próximo</text>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════ VERTICALES ══════════════ -->
+<section class="section" id="verticales">
+  <h2 class="section-title">Nuestras cuatro verticales</h2>
+  <p class="section-subtitle">Cada una resuelve un problema real. Juntas, te dan el panorama completo.</p>
+
+  <div class="verticals-grid">
+
+    <!-- Talent -->
+    <div class="vertical-card">
+      <div class="vertical-card-accent accent-blue"></div>
+      <span class="vertical-icon">💼</span>
+      <h3>Feroz Talent</h3>
+      <span class="vertical-tag">Consultoría Laboral</span>
+      <ul class="vertical-features">
+        <li>CV optimizado para filtros ATS — pasa algoritmos y humanos.</li>
+        <li>Optimización de LinkedIn, Magneto, Computrabajo y más.</li>
+        <li>Coaching de entrevistas: simulacro 1 a 1, sin teoría de más.</li>
+        <li>Marca personal narrativa que te diferencie en el mercado.</li>
+      </ul>
+      <a href="https://grupoferoz-talent.netlify.app/" target="_blank" class="btn btn-blue btn-block">Ver planes →</a>
+    </div>
+
+    <!-- Marketing -->
+    <div class="vertical-card">
+      <div class="vertical-card-accent accent-purple"></div>
+      <span class="vertical-icon">📱</span>
+      <h3>Feroz Marketing</h3>
+      <span class="vertical-tag">Agencia Digital</span>
+      <ul class="vertical-features">
+        <li>Diseño web y desarrollo de e-commerce a precio fijo.</li>
+        <li>Posicionamiento SEO y gestión de pauta digital (Ads).</li>
+        <li>Redacción estratégica y gestión de contenido.</li>
+        <li>Paquetes productizados: sin sorpresas, sin letras pequeñas.</li>
+      </ul>
+      <a href="https://wa.me/573147084315" target="_blank" class="btn btn-block">Solicitar cotización →</a>
+    </div>
+
+    <!-- Impresiones -->
+    <div class="vertical-card">
+      <div class="vertical-card-accent accent-orange"></div>
+      <span class="vertical-icon">🖨️</span>
+      <h3>Feroz Impresiones</h3>
+      <span class="vertical-tag">Logística Física</span>
+      <ul class="vertical-features">
+        <li>Hojas de vida premium impresas a color de alta calidad.</li>
+        <li>Tarjetas de presentación corporativas de alto impacto.</li>
+        <li>Material POP y publicidad impresa para negocios.</li>
+        <li>Entrega a domicilio en Medellín y ciudades principales.</li>
+      </ul>
+      <a href="https://wa.me/573147084315" target="_blank" class="btn btn-block" style="background:var(--feroz-blue);">Pedir cotización →</a>
+    </div>
+
+    <!-- Store -->
+    <div class="vertical-card" style="opacity: 0.75;">
+      <div class="vertical-card-accent accent-gray"></div>
+      <span class="vertical-icon">🛍️</span>
+      <h3>Feroz Store</h3>
+      <span class="vertical-tag">E-commerce</span>
+      <span class="coming-soon-badge">Próximamente</span>
+      <ul class="vertical-features">
+        <li>Productos de productividad para trabajo remoto.</li>
+        <li>Accesorios personalizados con Print-on-Demand.</li>
+        <li>Bienestar para mascotas y accesorios para el hogar.</li>
+        <li>Envíos a todo Colombia con logística propia.</li>
+      </ul>
+      <a href="https://wa.me/573147084315" target="_blank" class="btn btn-block btn-outline">Quiero ser el primero en saber →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════ METODOLOGÍA ══════════════ -->
+<section class="section">
+  <h2 class="section-title">Cómo trabajamos</h2>
+  <p class="section-subtitle">Sin vueltas. Cuatro pasos que aplican a todas nuestras verticales.</p>
+
+  <div class="roadmap-container">
+    <div class="roadmap">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Diagnóstico al grano</h3>
+        <p>Sesión de 20 min para entender tu momento actual, tus brechas y cuál vertical del ecosistema te conviene más.</p>
+      </div>
+      <div class="step-card" style="border-top-color: var(--feroz-purple);">
+        <div class="step-num">02</div>
+        <h3>Estrategia clara</h3>
+        <p>Te presentamos un plan concreto con entregables, tiempos y precios definidos desde el inicio. Sin letra pequeña.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Ejecución feroz</h3>
+        <p>Nuestro equipo ejecuta con velocidad y criterio. Tú mantienes visibilidad del proceso sin tener que perseguirnos.</p>
+      </div>
+      <div class="step-card" style="border-top-color: var(--feroz-purple);">
+        <div class="step-num">04</div>
+        <h3>Resultados y escala</h3>
+        <p>Medimos, ajustamos y te mostramos métricas reales. Si funciona, escalamos. Si no, lo decimos directo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════ NOSOTROS ══════════════ -->
+<section class="nosotros-section" id="nosotros">
+  <div class="nosotros-inner">
+
+    <div class="nosotros-text">
+      <h2>Somos Grupo Feroz</h2>
+      <p>Nacimos en Medellín con una convicción: el talento colombiano merece herramientas de clase mundial para competir en cualquier mercado, local o global.</p>
+      <p>No somos una agencia más ni un freelancer con marca bonita. Somos un ecosistema construido con criterio, para que personas y negocios avancen sin rodeos y sin cuentos.</p>
+
+      <div class="values-grid">
+        <div class="value-item">
+          <h4>Directos</h4>
+          <p>Te decimos lo que necesitas escuchar, no lo que quieres oír.</p>
+        </div>
+        <div class="value-item">
+          <h4>Sin cuentos</h4>
+          <p>Precios claros, entregables definidos, cero promesas vacías.</p>
+        </div>
+        <div class="value-item">
+          <h4>Resultados reales</h4>
+          <p>Medimos el impacto de cada servicio. Los números mandan.</p>
+        </div>
+        <div class="value-item">
+          <h4>100% colombiano</h4>
+          <p>Hecho en Medellín, con entendimiento profundo del mercado local.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nosotros-visual">
+      <div class="big-quote">"El talento colombiano merece <span>herramientas de clase mundial</span> para competir en cualquier mercado."</div>
+      <p class="origin-note">— Grupo Feroz, Medellín 2024</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════ CTA GLOBAL ══════════════ -->
+<section class="cta-section" id="contacto">
+  <h2>¿Por dónde quieres empezar?</h2>
+  <p>
+    Un asesor te ayuda a identificar qué vertical del ecosistema te conviene más según tu momento actual. La sesión es de 20 minutos y va directo al grano.
+  </p>
+  <div class="cta-btns">
+    <a href="https://wa.me/573147084315" target="_blank" class="btn">Hablar por WhatsApp</a>
+    <a href="#calendly" class="btn btn-outline">Agendar diagnóstico gratuito</a>
+  </div>
+
+  <div class="calendly-wrapper" id="calendly">
+    <div
+      class="calendly-inline-widget"
+      data-url="https://calendly.com/grupoferoz27-principal/30min-grupo-feroz-principal?hide_gdpr_banner=1&hide_landing_page_details=1"
+      style="min-width:320px;height:700px;"
+    ></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </div>
+</section>
+
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <img
+        src="https://assets-feroz.netlify.app/feroz_talent-removebg-preview.png"
+        alt="Grupo Feroz"
+      />
+      <p>Un ecosistema de crecimiento profesional y empresarial. Cuatro verticales, un solo propósito: que avances sin rodeos.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Verticales</h4>
+      <a href="https://grupoferoz.netlify.app/" target="_blank">Feroz Talent</a>
+      <a href="#verticales">Feroz Marketing</a>
+      <a href="#verticales">Feroz Impresiones</a>
+      <a href="#verticales">Feroz Store</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#ecosistema">El ecosistema</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Síguenos</h4>
+      <a href="#" target="_blank">Instagram</a>
+      <a href="#" target="_blank">TikTok</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank">Facebook</a>
+      <a href="https://wa.me/573147084315" target="_blank">WhatsApp</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Grupo Feroz · Medellín, Colombia. Todos los derechos reservados.</span>
+    <span>hola@grupoferoz.co</span>
+  </div>
+</footer>
+
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+
+  // Cerrar menú al hacer click fuera
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const nav = document.querySelector('.navbar');
+    if (!nav.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Smooth scroll para links internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
